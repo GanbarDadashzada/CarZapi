@@ -1,1 +1,10 @@
+spring:
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/carzapidb
+    username: postgres
+    password: salam123
 
+server:
+  port: 8008
