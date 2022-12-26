@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create car table
+      author: Ganbar Dadashzada
+      changes:
+        createTable:
+          tableName: cars
+          columns:
+            - column:
+                name: id
+                type: bigint
+                constraints:
+                  nullable: false
+                  primaryKey: true
+            - column:
+                name: brand
+                type: varchar(64)
+                constraints:
+                  nullable: false
+
