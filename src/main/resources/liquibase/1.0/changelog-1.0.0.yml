@@ -1,20 +1,96 @@
 databaseChangeLog:
   - changeSet:
-      id: Create car table
+      id: Create tables
       author: Ganbar Dadashzada
       changes:
-        createTable:
-          tableName: cars
-          columns:
-            - column:
-                name: id
-                type: bigint
-                constraints:
-                  nullable: false
-                  primaryKey: true
-            - column:
-                name: brand
-                type: varchar(64)
-                constraints:
-                  nullable: false
-
+        - createTable:
+            tableName: announcements
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: distance_type
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: distance_unit
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ccy
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ownership
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: seat_count
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: conductor_type
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: motor_size
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: motor_power
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vin_code
+                  type: varchar(64)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: username
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: number
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false

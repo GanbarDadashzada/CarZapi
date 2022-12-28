@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: Gearbox table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: gearboxes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: gearbox_type
+                  type: varchar(64)
+                  constraints:
+                    nullable: false

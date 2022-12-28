@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: Fuel table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: fuels
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: fuel_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
