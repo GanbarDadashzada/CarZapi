@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: Condition table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: conditions
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: condition_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: true

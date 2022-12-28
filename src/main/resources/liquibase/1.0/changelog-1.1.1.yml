@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: City table
+      author: Ganbar Dadashzada
+      changes:
+       - createTable:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: city_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false

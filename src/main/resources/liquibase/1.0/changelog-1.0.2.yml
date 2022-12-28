@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Announcement_equipment table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: announcement_equipment
+            columns:
+              - column:
+                  name: announcement_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcement_equipment_to_announcement
+                    references: announcements(id)
+              - column:
+                  name: equipment_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcement_equipment_to_equipment
+                    references: equipments(id)

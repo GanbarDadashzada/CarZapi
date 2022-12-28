@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: add relational columns
+      author: Elgun Maqsudzade
+      changes:
+        - addColumn:
+            tableName: announcements
+            columns:
+              - column:
+                  name: model_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_models
+                    references: models(id)
+              - column:
+                  name: ban_type_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_ban_types
+                    references: ban_types(id)
+              - column:
+                  name: fuel_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_fuels
+                    references: fuels(id)
+              - column:
+                  name: gearbox_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_gearboxes
+                    references: gearboxes(id)
+              - column:
+                  name: city_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_cities
+                    references: cities(id)
+              - column:
+                  name: colour_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_colours
+                    references: colours(id)

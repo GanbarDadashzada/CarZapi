@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Announcement_condition table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: announcement_condition
+            columns:
+              - column:
+                  name: announcement_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcement_condition_to_announcement
+                    references: announcements(id)
+              - column:
+                  name: condition_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcement_condition_to_condition
+                    references: conditions(id)
