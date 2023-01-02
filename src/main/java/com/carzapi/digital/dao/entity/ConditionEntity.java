@@ -16,7 +16,7 @@ public class ConditionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String condition_name;
+    private String conditionName;
 
     @ManyToMany(mappedBy = "conditionEntities")
     private List<AnnouncementEntity> announcementEntityList;

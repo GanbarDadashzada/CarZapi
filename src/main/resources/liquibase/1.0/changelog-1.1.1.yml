@@ -3,12 +3,13 @@ databaseChangeLog:
       id: City table
       author: Ganbar Dadashzada
       changes:
-       - createTable:
+        - createTable:
             tableName: cities
             columns:
               - column:
                   name: id
                   type: bigint
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true

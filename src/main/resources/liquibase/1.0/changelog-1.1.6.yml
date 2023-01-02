@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-fuel
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: fuels
+            columns:
+              - column:
+                  name: fuel_name
+                  value: Benzin
+        - insert:
+            tableName: fuels
+            columns:
+              - column:
+                  name: fuel_name
+                  value: Dizel
+        - insert:
+            tableName: fuels
+            columns:
+              - column:
+                  name: fuel_name
+                  value: Qaz
+        - insert:
+            tableName: fuels
+            columns:
+              - column:
+                  name: fuel_name
+                  value: Hibrid
+        - insert:
+            tableName: fuels
+            columns:
+              - column:
+                  name: fuel_name
+                  value: Elektro

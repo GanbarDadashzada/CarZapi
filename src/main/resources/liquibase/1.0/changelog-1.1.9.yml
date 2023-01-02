@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-gearbox
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: gearboxes
+            columns:
+              - column:
+                  name: gearbox_type
+                  value: Mexaniki
+        - insert:
+            tableName: gearboxes
+            columns:
+              - column:
+                  name: gearbox_type
+                  value: Avtomat
+        - insert:
+            tableName: gearboxes
+            columns:
+              - column:
+                  name: gearbox_type
+                  value: Robotlaşdırılmış
+        - insert:
+            tableName: gearboxes
+            columns:
+              - column:
+                  name: gearbox_type
+                  value: Variator
