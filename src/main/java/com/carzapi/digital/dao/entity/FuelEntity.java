@@ -16,7 +16,7 @@ public class FuelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fuel_name;
+    private String fuelName;
     @OneToMany(mappedBy = "fuelEntity")
     private List<AnnouncementEntity> announcementEntityList_fuel;
 }

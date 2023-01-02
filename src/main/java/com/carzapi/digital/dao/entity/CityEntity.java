@@ -16,7 +16,7 @@ public class CityEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String city_name;
+    private String cityName;
 
     @OneToMany(mappedBy = "cityEntity")
     private List<AnnouncementEntity> announcementEntityList;

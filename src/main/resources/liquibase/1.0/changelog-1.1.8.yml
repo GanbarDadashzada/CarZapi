@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-city
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: city_name
+                  value: Bakı
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: city_name
+                  value: Sumqayıt
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: city_name
+                  value: Gəncə
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: city_name
+                  value: Şəki
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: city_name
+                  value: Lənkəran

@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-banType
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: ban_types
+            columns:
+              - column:
+                  name: ban_name
+                  value: Avtobus
+        - insert:
+            tableName: ban_types
+            columns:
+              - column:
+                  name: ban_name
+                  value: Furqon
+        - insert:
+            tableName: ban_types
+            columns:
+              - column:
+                  name: ban_name
+                  value: Sedan
+        - insert:
+            tableName: ban_types
+            columns:
+              - column:
+                  name: ban_name
+                  value: Pikap
+        - insert:
+            tableName: ban_types
+            columns:
+              - column:
+                  name: ban_name
+                  value: Yük Maşını

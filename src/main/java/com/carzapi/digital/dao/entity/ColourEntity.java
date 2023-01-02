@@ -16,8 +16,8 @@ public class ColourEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String colour_name;
+    private String colourName;
 
     @OneToMany(mappedBy = "colourEntity")
-    private List<AnnouncementEntity> announcementEntityList_colour;
+    private List<AnnouncementEntity> announcementEntities;
 }

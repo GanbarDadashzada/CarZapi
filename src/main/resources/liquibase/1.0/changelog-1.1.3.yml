@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-brand
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_name
+                  value: Chevrolet
+        - insert:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_name
+                  value: Hyundai
+        - insert:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_name
+                  value: Mercedes
+        - insert:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_name
+                  value: Lamborghini
+        - insert:
+            tableName: brands
+            columns:
+              - column:
+                  name: brand_name
+                  value: Audi

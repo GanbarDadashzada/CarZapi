@@ -25,7 +25,7 @@ public class GearboxEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String gearbox_type;
+    private String gearboxType;
     @OneToMany(mappedBy = "gearboxEntity")
     private List<AnnouncementEntity> announcementEntityList_gearboxes;
 

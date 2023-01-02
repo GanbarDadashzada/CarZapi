@@ -28,7 +28,7 @@ public class ModelEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String model_name;
+    private String modelName;
 
     @ManyToOne()
     @JoinColumn(name = "brand_id",referencedColumnName = "id", nullable = false)

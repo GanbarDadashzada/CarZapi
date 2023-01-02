@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-colour
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: colours
+            columns:
+              - column:
+                  name: colour_name
+                  value: Ağ
+        - insert:
+            tableName: colours
+            columns:
+              - column:
+                  name: colour_name
+                  value: Qırmızı
+        - insert:
+            tableName: colours
+            columns:
+              - column:
+                  name: colour_name
+                  value: Yaşıl
+        - insert:
+            tableName: colours
+            columns:
+              - column:
+                  name: colour_name
+                  value: Qara
+        - insert:
+            tableName: colours
+            columns:
+              - column:
+                  name: colour_name
+                  value: Boz
+
