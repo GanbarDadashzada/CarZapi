@@ -1,35 +1,29 @@
 databaseChangeLog:
   - changeSet:
-      id: insert-fuel
+      id: insert-condition
       author: Ganbar Dadashzada
       changes:
         - insert:
-            tableName: fuels
+            tableName: conditions
             columns:
               - column:
-                  name: fuel_name
-                  value: Benzin
+                  name: condition_name
+                  value: Credit
         - insert:
-            tableName: fuels
+            tableName: conditions
             columns:
               - column:
-                  name: fuel_name
-                  value: Dizel
+                  name: condition_name
+                  value: Damaged
         - insert:
-            tableName: fuels
+            tableName: conditions
             columns:
               - column:
-                  name: fuel_name
-                  value: Qaz
+                  name: condition_name
+                  value: Painted
         - insert:
-            tableName: fuels
+            tableName: conditions
             columns:
               - column:
-                  name: fuel_name
-                  value: Hibrid
-        - insert:
-            tableName: fuels
-            columns:
-              - column:
-                  name: fuel_name
-                  value: Elektro
+                  name: condition_name
+                  value: Barter

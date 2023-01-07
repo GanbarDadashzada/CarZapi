@@ -1,140 +1,35 @@
 databaseChangeLog:
   - changeSet:
-      id: insert-model
+      id: insert-banType
       author: Ganbar Dadashzada
       changes:
         - insert:
-            tableName: models
+            tableName: ban_types
             columns:
               - column:
-                  name: model_name
-                  value: Camaro
-              - column:
-                  name: brand_id
-                  value: 1
+                  name: ban_name
+                  value: Avtobus
         - insert:
-            tableName: models
+            tableName: ban_types
             columns:
               - column:
-                  name: model_name
-                  value: Cruze
-              - column:
-                  name: brand_id
-                  value: 1
+                  name: ban_name
+                  value: Furqon
         - insert:
-            tableName: models
+            tableName: ban_types
             columns:
               - column:
-                  name: model_name
-                  value: Malibu
-              - column:
-                  name: brand_id
-                  value: 1
+                  name: ban_name
+                  value: Sedan
         - insert:
-            tableName: models
+            tableName: ban_types
             columns:
               - column:
-                  name: model_name
-                  value: Accent
-              - column:
-                  name: brand_id
-                  value: 2
+                  name: ban_name
+                  value: Pikap
         - insert:
-            tableName: models
+            tableName: ban_types
             columns:
               - column:
-                  name: model_name
-                  value: Elantra
-              - column:
-                  name: brand_id
-                  value: 2
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: Genesis
-              - column:
-                  name: brand_id
-                  value: 2
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: ML 500
-              - column:
-                  name: brand_id
-                  value: 3
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: S 550
-              - column:
-                  name: brand_id
-                  value: 3
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: E 200
-              - column:
-                  name: brand_id
-                  value: 3
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: Aventador
-              - column:
-                  name: brand_id
-                  value: 4
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: Gallardo
-              - column:
-                  name: brand_id
-                  value: 4
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: Diablo
-              - column:
-                  name: brand_id
-                  value: 4
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: A8
-              - column:
-                  name: brand_id
-                  value: 5
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: Q7
-              - column:
-                  name: brand_id
-                  value: 5
-        - insert:
-            tableName: models
-            columns:
-              - column:
-                  name: model_name
-                  value: A5
-              - column:
-                  name: brand_id
-                  value: 5
+                  name: ban_name
+                  value: Yük Maşını

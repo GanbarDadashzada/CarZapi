@@ -1,6 +1,8 @@
 package com.carzapi.digital.dao.entity;
 
 
+import com.carzapi.digital.model.enums.Fuel;
+import com.carzapi.digital.model.enums.GearBox;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,12 +42,13 @@ public class AnnouncementEntity {
     private Integer seatCount;
     private String conductorType;
     private Integer motorSize;
+    private GearBox gearBox;
+    private Fuel fuel;
     private Integer motorPower;
     private String vinCode;
     private String description;
-    private String username;
+    private String fullName;
     private String email;
-    private String number;
 
     @ManyToOne
     @JoinColumn(name = "model_id", referencedColumnName = "id", nullable = false)
@@ -60,19 +63,11 @@ public class AnnouncementEntity {
     private ColourEntity colourEntity;
 
     @ManyToOne
-    @JoinColumn(name = "fuel_id", referencedColumnName = "id", nullable = false)
-    private FuelEntity fuelEntity;
-
-    @ManyToOne
-    @JoinColumn(name = "gearbox_id", referencedColumnName = "id", nullable = false)
-    private GearboxEntity gearboxEntity;
-
-    @ManyToOne
     @JoinColumn(name = "city_id", referencedColumnName = "id", nullable = false)
     private CityEntity cityEntity;
 
     @ManyToMany
-    @JoinTable(name = "announcement_equipments",
+    @JoinTable(name = "announcement_equipment",
             joinColumns = {
                     @JoinColumn(name = "announcement_id", referencedColumnName = "id")
             },
@@ -95,6 +90,7 @@ public class AnnouncementEntity {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
+
 
 }

@@ -1,50 +1,140 @@
 databaseChangeLog:
   - changeSet:
-      id: add relational columns
-      author: Elgun Maqsudzade
+      id: insert-model
+      author: Ganbar Dadashzada
       changes:
-        - addColumn:
-            tableName: announcements
+        - insert:
+            tableName: models
             columns:
               - column:
-                  name: model_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_models
-                    references: models(id)
+                  name: model_name
+                  value: Camaro
               - column:
-                  name: ban_type_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_ban_types
-                    references: ban_types(id)
+                  name: brand_id
+                  value: 1
+        - insert:
+            tableName: models
+            columns:
               - column:
-                  name: fuel_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_fuels
-                    references: fuels(id)
+                  name: model_name
+                  value: Cruze
               - column:
-                  name: gearbox_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_gearboxes
-                    references: gearboxes(id)
+                  name: brand_id
+                  value: 1
+        - insert:
+            tableName: models
+            columns:
               - column:
-                  name: city_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_cities
-                    references: cities(id)
+                  name: model_name
+                  value: Malibu
               - column:
-                  name: colour_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_announcements_to_colours
-                    references: colours(id)
+                  name: brand_id
+                  value: 1
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Accent
+              - column:
+                  name: brand_id
+                  value: 2
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Elantra
+              - column:
+                  name: brand_id
+                  value: 2
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Genesis
+              - column:
+                  name: brand_id
+                  value: 2
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: ML 500
+              - column:
+                  name: brand_id
+                  value: 3
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: S 550
+              - column:
+                  name: brand_id
+                  value: 3
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: E 200
+              - column:
+                  name: brand_id
+                  value: 3
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Aventador
+              - column:
+                  name: brand_id
+                  value: 4
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Gallardo
+              - column:
+                  name: brand_id
+                  value: 4
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Diablo
+              - column:
+                  name: brand_id
+                  value: 4
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: A8
+              - column:
+                  name: brand_id
+                  value: 5
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: Q7
+              - column:
+                  name: brand_id
+                  value: 5
+        - insert:
+            tableName: models
+            columns:
+              - column:
+                  name: model_name
+                  value: A5
+              - column:
+                  name: brand_id
+                  value: 5

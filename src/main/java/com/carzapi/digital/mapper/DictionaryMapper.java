@@ -4,8 +4,6 @@ import com.carzapi.digital.dao.entity.BanTypeEntity;
 import com.carzapi.digital.dao.entity.ModelEntity;
 import com.carzapi.digital.dao.entity.CityEntity;
 import com.carzapi.digital.dao.entity.ColourEntity;
-import com.carzapi.digital.dao.entity.FuelEntity;
-import com.carzapi.digital.dao.entity.GearboxEntity;
 import com.carzapi.digital.dao.entity.BrandEntity;
 import com.carzapi.digital.model.dto.DictionaryDto;
 import org.mapstruct.Mapper;
@@ -28,12 +26,6 @@ public interface DictionaryMapper {
     @Mapping(target = "name", source = "cityName")
     DictionaryDto cityEntityToDto(CityEntity cityEntity);
 
-    @Mapping(target = "name", source = "banTypeName")
+    @Mapping(target = "name", source = "banName")
     DictionaryDto banTypeEntityToDto(BanTypeEntity banTypeEntity);
-
-    @Mapping(target = "name", source = "fuelName")
-    DictionaryDto fuelEntityToDto (FuelEntity fuelEntity);
-
-    @Mapping(target = "name", source = "gearboxType")
-    DictionaryDto gearboxEntityToDto (GearboxEntity gearboxEntity);
 }

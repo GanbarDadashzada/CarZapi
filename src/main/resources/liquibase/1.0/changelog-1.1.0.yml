@@ -1,20 +1,36 @@
 databaseChangeLog:
   - changeSet:
-      id: Gearbox table
-      author: Ganbar Dadashzada
+      id: add relational columns
+      author: Elgun Maqsudzade
       changes:
-        - createTable:
-            tableName: gearboxes
+        - addColumn:
+            tableName: announcements
             columns:
               - column:
-                  name: id
+                  name: model_id
                   type: bigint
-                  autoIncrement: true
                   constraints:
                     nullable: false
-                    primaryKey: true
+                    foreignKeyName: fk_announcements_to_models
+                    references: models(id)
               - column:
-                  name: gearbox_type
-                  type: varchar(64)
+                  name: ban_type_id
+                  type: bigint
                   constraints:
                     nullable: false
+                    foreignKeyName: fk_announcements_to_ban_types
+                    references: ban_types(id)
+              - column:
+                  name: city_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_cities
+                    references: cities(id)
+              - column:
+                  name: colour_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_announcements_to_colours
+                    references: colours(id)

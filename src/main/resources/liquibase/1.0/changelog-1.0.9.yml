@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: Ban type table
+      id: City table
       author: Ganbar Dadashzada
       changes:
         - createTable:
-            tableName: ban_types
+            tableName: cities
             columns:
               - column:
                   name: id
@@ -14,7 +14,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: ban_name
+                  name: city_name
                   type: varchar(64)
                   constraints:
                     nullable: false

@@ -1,35 +1,36 @@
 databaseChangeLog:
   - changeSet:
-      id: insert-brand
+      id: insert-colour
       author: Ganbar Dadashzada
       changes:
         - insert:
-            tableName: brands
+            tableName: colours
             columns:
               - column:
-                  name: brand_name
-                  value: Chevrolet
+                  name: colour_name
+                  value: Ağ
         - insert:
-            tableName: brands
+            tableName: colours
             columns:
               - column:
-                  name: brand_name
-                  value: Hyundai
+                  name: colour_name
+                  value: Qırmızı
         - insert:
-            tableName: brands
+            tableName: colours
             columns:
               - column:
-                  name: brand_name
-                  value: Mercedes
+                  name: colour_name
+                  value: Yaşıl
         - insert:
-            tableName: brands
+            tableName: colours
             columns:
               - column:
-                  name: brand_name
-                  value: Lamborghini
+                  name: colour_name
+                  value: Qara
         - insert:
-            tableName: brands
+            tableName: colours
             columns:
               - column:
-                  name: brand_name
-                  value: Audi
+                  name: colour_name
+                  value: Boz
+
