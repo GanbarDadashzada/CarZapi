@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: Model table
+      id: Colour table
       author: Ganbar Dadashzada
       changes:
         - createTable:
-            tableName: models
+            tableName: colours
             columns:
               - column:
                   name: id
@@ -14,14 +14,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: model_name
+                  name: colour_name
                   type: varchar(64)
                   constraints:
                     nullable: false
-              - column:
-                  name: brand_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: fk_model_to_brand
-                    references: brands(id)

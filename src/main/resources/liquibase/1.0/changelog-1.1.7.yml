@@ -1,35 +1,35 @@
 databaseChangeLog:
   - changeSet:
-      id: insert-banType
+      id: insert-equipment
       author: Ganbar Dadashzada
       changes:
         - insert:
-            tableName: ban_types
+            tableName: equipments
             columns:
               - column:
-                  name: ban_name
-                  value: Avtobus
+                  name: equipment_name
+                  value: ABS
         - insert:
-            tableName: ban_types
+            tableName: equipments
             columns:
               - column:
-                  name: ban_name
-                  value: Furqon
+                  name: equipment_name
+                  value: Lyuk
         - insert:
-            tableName: ban_types
+            tableName: equipments
             columns:
               - column:
-                  name: ban_name
-                  value: Sedan
+                  name: equipment_name
+                  value: Park Radar
         - insert:
-            tableName: ban_types
+            tableName: equipments
             columns:
               - column:
-                  name: ban_name
-                  value: Pikap
+                  name: equipment_name
+                  value: Xenon Lamps
         - insert:
-            tableName: ban_types
+            tableName: equipments
             columns:
               - column:
-                  name: ban_name
-                  value: Yük Maşını
+                  name: equipment_name
+                  value: Rain censor

@@ -16,7 +16,7 @@ public class BanTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String banTypeName;
+    private String banName;
 
     @OneToMany(mappedBy = "banTypeEntity")
     private List<AnnouncementEntity> announcementEntityList_ban;

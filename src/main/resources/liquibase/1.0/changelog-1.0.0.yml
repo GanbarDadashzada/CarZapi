@@ -9,6 +9,7 @@ databaseChangeLog:
               - column:
                   name: id
                   type: bigint
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
@@ -68,7 +69,7 @@ databaseChangeLog:
                   constraints:
                     nullable: true
               - column:
-                  name: username
+                  name: full_name
                   type: varchar(64)
                   constraints:
                     nullable: false
@@ -78,7 +79,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: number
+                  name: gear_box
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fuel
                   type: varchar(64)
                   constraints:
                     nullable: false

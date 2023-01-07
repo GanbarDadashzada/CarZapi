@@ -1,36 +1,35 @@
 databaseChangeLog:
   - changeSet:
-      id: insert-colour
+      id: insert-city
       author: Ganbar Dadashzada
       changes:
         - insert:
-            tableName: colours
+            tableName: cities
             columns:
               - column:
-                  name: colour_name
-                  value: Ağ
+                  name: city_name
+                  value: Bakı
         - insert:
-            tableName: colours
+            tableName: cities
             columns:
               - column:
-                  name: colour_name
-                  value: Qırmızı
+                  name: city_name
+                  value: Sumqayıt
         - insert:
-            tableName: colours
+            tableName: cities
             columns:
               - column:
-                  name: colour_name
-                  value: Yaşıl
+                  name: city_name
+                  value: Gəncə
         - insert:
-            tableName: colours
+            tableName: cities
             columns:
               - column:
-                  name: colour_name
-                  value: Qara
+                  name: city_name
+                  value: Şəki
         - insert:
-            tableName: colours
+            tableName: cities
             columns:
               - column:
-                  name: colour_name
-                  value: Boz
-
+                  name: city_name
+                  value: Lənkəran

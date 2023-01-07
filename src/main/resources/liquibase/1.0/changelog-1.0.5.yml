@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: Fuel table
+      id: Brand table
       author: Ganbar Dadashzada
       changes:
         - createTable:
-            tableName: fuels
+            tableName: brands
             columns:
               - column:
                   name: id
@@ -14,7 +14,7 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
               - column:
-                  name: fuel_name
+                  name: brand_name
                   type: varchar(64)
                   constraints:
                     nullable: false

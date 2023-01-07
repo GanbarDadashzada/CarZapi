@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "condition")
+@Table(name = "conditions")
 public class ConditionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
