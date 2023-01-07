@@ -4,8 +4,6 @@ import com.carzapi.digital.dao.repo.BanTypeRepo;
 import com.carzapi.digital.dao.repo.BrandRepo;
 import com.carzapi.digital.dao.repo.CityRepo;
 import com.carzapi.digital.dao.repo.ColourRepo;
-import com.carzapi.digital.dao.repo.FuelRepo;
-import com.carzapi.digital.dao.repo.GearboxRepo;
 import com.carzapi.digital.dao.repo.ModelRepo;
 import com.carzapi.digital.mapper.DictionaryMapper;
 import com.carzapi.digital.model.dto.DictionaryDto;
@@ -21,9 +19,7 @@ import java.util.stream.Collectors;
 public class DictionaryService {
     public final BanTypeRepo banTypeRepo;
     public final ColourRepo colourRepo;
-    public final GearboxRepo gearboxRepo;
     public final CityRepo cityRepo;
-    public final FuelRepo fuelRepo;
     public final BrandRepo brandRepo;
     public final ModelRepo modelRepo;
 
@@ -43,27 +39,11 @@ public class DictionaryService {
                 .collect(Collectors.toList());
     }
 
-    public List<DictionaryDto> getGearbox () {
-        log.info("ActionLog.getGearbox.start");
-        return gearboxRepo.findAll()
-                .stream()
-                .map(DictionaryMapper.INSTANCE::gearboxEntityToDto)
-                .collect(Collectors.toList());
-    }
-
     public List<DictionaryDto> getCity () {
         log.info("ActionLog.getCity.start");
         return cityRepo.findAll()
                 .stream()
                 .map(DictionaryMapper.INSTANCE::cityEntityToDto)
-                .collect(Collectors.toList());
-    }
-
-    public List<DictionaryDto> getFuel () {
-        log.info("ActionLog.getFuel.start");
-        return fuelRepo.findAll()
-                .stream()
-                .map(DictionaryMapper.INSTANCE::fuelEntityToDto)
                 .collect(Collectors.toList());
     }
 
@@ -82,6 +62,5 @@ public class DictionaryService {
                 .map(DictionaryMapper.INSTANCE::modelEntityToDto)
                 .collect(Collectors.toList());
     }
-
 
 }
