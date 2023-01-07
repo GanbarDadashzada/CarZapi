@@ -12,33 +12,27 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/data")
-public class DataController {
+@RequestMapping("/api/v1/car-zapi/dictionary")
+public class DictionaryController {
     private final DictionaryService dictionaryService;
 
-    @GetMapping("/dictionary/colours")
+    @GetMapping("/colours")
     public List<DictionaryDto> getColour() {
         return dictionaryService.getColours();
     }
 
-    @GetMapping("/dictionary/banTypes")
+    @GetMapping("/banTypes")
     public List<DictionaryDto> getBanType() {
         return dictionaryService.getBanType();
     }
 
-    @GetMapping("/dictionary/gearboxes")
-    public List<DictionaryDto> getGearbox() { return dictionaryService.getGearbox(); }
-
-    @GetMapping("/dictionary/cities")
+    @GetMapping("/cities")
     public List<DictionaryDto> getCity() { return dictionaryService.getCity(); }
 
-    @GetMapping("/dictionary/fuels")
-    public List<DictionaryDto> getFuel() { return dictionaryService.getFuel(); }
-
-    @GetMapping("/dictionary/brands")
+    @GetMapping("/brands")
     public List<DictionaryDto> getBrand() { return dictionaryService.getBrand(); }
 
-    @GetMapping("/dictionary/brands/{id}/models")
+    @GetMapping("/brands/{id}/models")
     public List<DictionaryDto> getModels(@PathVariable Long id) {
         return dictionaryService.getModel(id);
     }
