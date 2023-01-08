@@ -89,6 +89,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: privileges
+                  type: json
+                  constraints:
+                    nullable: true
+              - column:
                   name: created_at
                   type: timestamp
                   defaultValue: now()

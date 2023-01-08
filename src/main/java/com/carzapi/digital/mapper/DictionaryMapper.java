@@ -1,6 +1,8 @@
 package com.carzapi.digital.mapper;
 
 import com.carzapi.digital.dao.entity.BanTypeEntity;
+import com.carzapi.digital.dao.entity.ConditionEntity;
+import com.carzapi.digital.dao.entity.EquipmentEntity;
 import com.carzapi.digital.dao.entity.ModelEntity;
 import com.carzapi.digital.dao.entity.CityEntity;
 import com.carzapi.digital.dao.entity.ColourEntity;
@@ -28,4 +30,10 @@ public interface DictionaryMapper {
 
     @Mapping(target = "name", source = "banName")
     DictionaryDto banTypeEntityToDto(BanTypeEntity banTypeEntity);
+
+    @Mapping(target = "name", source = "equipmentName")
+    DictionaryDto equipmentEntityToDto (EquipmentEntity equipmentEntity);
+
+    @Mapping(target = "name", source = "conditionName")
+    DictionaryDto conditionEntityToDto (ConditionEntity conditionEntity);
 }
