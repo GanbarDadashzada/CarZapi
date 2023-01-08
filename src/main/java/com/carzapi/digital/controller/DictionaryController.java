@@ -31,6 +31,10 @@ public class DictionaryController {
 
     @GetMapping("/brands")
     public List<DictionaryDto> getBrand() { return dictionaryService.getBrand(); }
+    @GetMapping("/equipments")
+    public List<DictionaryDto> getEquipment() { return dictionaryService.getEquipment(); }
+    @GetMapping("/conditions")
+    public List<DictionaryDto> getCondition() { return dictionaryService.getCondition(); }
 
     @GetMapping("/brands/{id}/models")
     public List<DictionaryDto> getModels(@PathVariable Long id) {
