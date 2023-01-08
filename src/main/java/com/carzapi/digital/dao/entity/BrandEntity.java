@@ -1,8 +1,13 @@
 package com.carzapi.digital.dao.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 @Getter
