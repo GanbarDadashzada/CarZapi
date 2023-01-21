@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: adding year to announcement
+      author: Ganbar Dadashzada
+      changes:
+        - addColumn:
+            tableName: announcements
+            columns:
+              - column:
+                  name: year
+                  type: bigint

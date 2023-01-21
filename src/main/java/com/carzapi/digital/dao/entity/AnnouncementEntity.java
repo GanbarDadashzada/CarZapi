@@ -4,6 +4,7 @@ package com.carzapi.digital.dao.entity;
 import com.carzapi.digital.model.enums.Fuel;
 import com.carzapi.digital.model.enums.GearBox;
 import com.carzapi.digital.model.enums.Privilege;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,8 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -34,6 +37,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "announcements")
+@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 public class AnnouncementEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +45,7 @@ public class AnnouncementEntity {
     private String distanceType;
     private Integer distanceUnit;
     private String ccy;
-    private Double price; // buna baxarsan
+    private Double price;
     private String ownership;
     private Integer seatCount;
     private String conductorType;
@@ -50,13 +54,16 @@ public class AnnouncementEntity {
     private GearBox gearBox;
     @Enumerated(EnumType.STRING)
     private Fuel fuel;
+    private Integer year;
     private Integer motorPower;
     private String vinCode;
     private String description;
     private String fullName;
     private String email;
-//    @Type(type = "jsonb")
-//    private List<Privilege> privileges;
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private List<Privilege> privileges;
+
 
     @ManyToOne
     @JoinColumn(name = "model_id", referencedColumnName = "id", nullable = false)

@@ -34,6 +34,7 @@ public class AnnouncementDto {
     private GearBox gearBox;
     private Long banTypeId;
     private Fuel fuel;
+    private Integer year;
     private List<Long> conditionIds;
     private List<Long> equipmentIds;
 }

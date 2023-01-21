@@ -25,8 +25,11 @@ import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -97,7 +100,6 @@ public class AnnouncementService {
 
         PageRequest pageRequest = PageRequest.of(page, size, Sort.by("createdAt").descending());
         Page<AnnouncementEntity> pageEntity = announcementRepo.findAll(pageRequest);
-        log.info("ActionLog.findAll bitdi");
 
         log.info("ActionLog.getAnnouncements.end");
         return PageableDto.<LightAnnouncementDto>builder()
@@ -110,4 +112,5 @@ public class AnnouncementService {
                         .collect(Collectors.toList()))
                 .build();
     }
+
 }
