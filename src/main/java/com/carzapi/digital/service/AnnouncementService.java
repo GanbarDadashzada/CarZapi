@@ -14,22 +14,20 @@ import com.carzapi.digital.dao.repo.EquipmentRepo;
 import com.carzapi.digital.dao.repo.ModelRepo;
 import com.carzapi.digital.mapper.AnnouncementMapper;
 import com.carzapi.digital.mapper.CriteriaMapper;
+import com.carzapi.digital.model.dto.AnnouncementCriteria;
 import com.carzapi.digital.model.dto.AnnouncementDto;
 import com.carzapi.digital.model.dto.LightAnnouncementDto;
 import com.carzapi.digital.model.dto.PageableDto;
 import com.carzapi.digital.model.exceptions.NotFoundException;
+import com.carzapi.digital.service.specification.AnnouncementSpecification;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -95,11 +93,15 @@ public class AnnouncementService {
 
 
     public PageableDto<LightAnnouncementDto> getLightAnnouncements(Integer page,
-                                                                   Integer size) {
+                                                                   Integer size,
+                                                                   AnnouncementCriteria announcementCriteria) {
         log.info("ActionLog.getAnnouncements.start");
 
         PageRequest pageRequest = PageRequest.of(page, size, Sort.by("createdAt").descending());
-        Page<AnnouncementEntity> pageEntity = announcementRepo.findAll(pageRequest);
+        Page<AnnouncementEntity> pageEntity = announcementRepo.findAll(
+                new AnnouncementSpecification(announcementCriteria), pageRequest
+        );
+
 
         log.info("ActionLog.getAnnouncements.end");
         return PageableDto.<LightAnnouncementDto>builder()
