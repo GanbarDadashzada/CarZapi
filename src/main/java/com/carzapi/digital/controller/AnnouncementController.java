@@ -1,5 +1,6 @@
 package com.carzapi.digital.controller;
 
+import com.carzapi.digital.model.dto.AnnouncementCriteria;
 import com.carzapi.digital.model.dto.AnnouncementDto;
 import com.carzapi.digital.model.dto.LightAnnouncementDto;
 import com.carzapi.digital.model.dto.PageableDto;
@@ -25,7 +26,8 @@ public class AnnouncementController {
 
     @GetMapping
     public PageableDto<LightAnnouncementDto> getLightAnnouncements(@RequestParam(defaultValue = "0") Integer page,
-                                                                   @RequestParam(defaultValue = "10") Integer size) {
-        return announcementService.getLightAnnouncements(page,size);
+                                                                   @RequestParam(defaultValue = "10") Integer size,
+                                                                   AnnouncementCriteria announcementCriteria) {
+        return announcementService.getLightAnnouncements(page, size, announcementCriteria);
     }
 }
