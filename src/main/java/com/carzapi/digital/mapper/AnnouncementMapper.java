@@ -25,6 +25,7 @@ public interface AnnouncementMapper {
     @Mapping(target = "distanceUnit", source = "announcementDto.distanceUnit")
     @Mapping(target = "ccy", source = "announcementDto.ccy")
     @Mapping(target = "price", source = "announcementDto.price")
+    @Mapping(target = "year", source = "announcementDto.year")
     @Mapping(target = "ownership", source = "announcementDto.ownership")
     @Mapping(target = "seatCount", source = "announcementDto.seatCount")
     @Mapping(target = "conductorType", source = "announcementDto.conductorType")

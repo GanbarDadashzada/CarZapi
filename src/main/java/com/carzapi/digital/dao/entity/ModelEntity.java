@@ -32,8 +32,8 @@ public class ModelEntity {
 
     @ManyToOne()
     @JoinColumn(name = "brand_id",referencedColumnName = "id", nullable = false)
-    private BrandEntity brand;
+    private BrandEntity brandEntity;
 
     @OneToMany(mappedBy = "modelEntity")
-    private List<AnnouncementEntity> announcements;
+    private List<AnnouncementEntity> announcementEntities;
 }

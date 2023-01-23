@@ -22,6 +22,6 @@ public class BrandEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String brandName;
-    @OneToMany(mappedBy = "brand")
+    @OneToMany(mappedBy = "brandEntity")
     private List<ModelEntity> modelList;
 }
