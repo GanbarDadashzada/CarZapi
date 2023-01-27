@@ -3,7 +3,6 @@ package com.carzapi.digital.dao.entity;
 
 import com.carzapi.digital.model.enums.Fuel;
 import com.carzapi.digital.model.enums.GearBox;
-import com.carzapi.digital.model.enums.Privilege;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -26,6 +23,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -60,9 +58,12 @@ public class AnnouncementEntity {
     private String description;
     private String fullName;
     private String email;
-    @Type(type = "jsonb")
-    @Column(columnDefinition = "jsonb")
-    private List<Privilege> privileges;
+//    @Type(type = "jsonb")
+//    @Column(columnDefinition = "jsonb")
+//    private List<Privilege> privileges;
+
+    @OneToMany(mappedBy = "announcementEntity")
+    private List<AnnouncementPrivilegeEntity> announcementPrivilegeEntities;
 
 
     @ManyToOne
@@ -106,6 +107,5 @@ public class AnnouncementEntity {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
 
 }

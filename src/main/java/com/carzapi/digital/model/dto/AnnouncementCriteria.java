@@ -2,7 +2,6 @@ package com.carzapi.digital.model.dto;
 
 import com.carzapi.digital.model.enums.Fuel;
 import com.carzapi.digital.model.enums.GearBox;
-import com.carzapi.digital.model.enums.Privilege;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -37,7 +36,7 @@ public class AnnouncementCriteria {
     private String distanceType;
     private String ownership;
     private Integer seatCount;
-    private List<Privilege> privileges;
+    private List<Long> privilegeIds;
     private List<Long> conditionIds;
     private List<Long> equipmentIds;
 

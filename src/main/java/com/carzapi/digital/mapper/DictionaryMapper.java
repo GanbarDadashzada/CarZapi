@@ -7,6 +7,7 @@ import com.carzapi.digital.dao.entity.ModelEntity;
 import com.carzapi.digital.dao.entity.CityEntity;
 import com.carzapi.digital.dao.entity.ColourEntity;
 import com.carzapi.digital.dao.entity.BrandEntity;
+import com.carzapi.digital.dao.entity.PrivilegeEntity;
 import com.carzapi.digital.model.dto.DictionaryDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -36,4 +37,7 @@ public interface DictionaryMapper {
 
     @Mapping(target = "name", source = "conditionName")
     DictionaryDto conditionEntityToDto (ConditionEntity conditionEntity);
+
+    @Mapping(target = "name", source = "name")
+    DictionaryDto privilegesEntityToDto(PrivilegeEntity privilegeEntity);
 }

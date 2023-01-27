@@ -7,6 +7,7 @@ import com.carzapi.digital.dao.repo.ColourRepo;
 import com.carzapi.digital.dao.repo.ConditionRepo;
 import com.carzapi.digital.dao.repo.EquipmentRepo;
 import com.carzapi.digital.dao.repo.ModelRepo;
+import com.carzapi.digital.dao.repo.PrivilegeRepo;
 import com.carzapi.digital.mapper.DictionaryMapper;
 import com.carzapi.digital.model.dto.DictionaryDto;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ public class DictionaryService {
     public final ModelRepo modelRepo;
     public final EquipmentRepo equipmentRepo;
     public final ConditionRepo conditionRepo;
+    public final PrivilegeRepo privilegeRepo;
 
     public List<DictionaryDto> getColours() {
         log.info("ActionLog.getColours.start");
@@ -81,6 +83,14 @@ public class DictionaryService {
         return conditionRepo.findAll()
                 .stream()
                 .map(DictionaryMapper.INSTANCE::conditionEntityToDto)
+                .collect(Collectors.toList());
+    }
+
+    public List<DictionaryDto> getPrivileges() {
+        log.info("ActionLog.getPrivileges.start");
+        return privilegeRepo.findAll()
+                .stream()
+                .map(DictionaryMapper.INSTANCE::privilegesEntityToDto)
                 .collect(Collectors.toList());
     }
 

@@ -30,6 +30,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 @Slf4j
 @Service
 @Builder(toBuilder = true)
@@ -111,7 +113,7 @@ public class AnnouncementService {
                 .totalPages(pageEntity.getTotalPages())
                 .data(pageEntity.stream()
                         .map(CriteriaMapper.INSTANCE::announcementToLightDto)
-                        .collect(Collectors.toList()))
+                        .collect(toList()))
                 .build();
     }
 

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert privileges
+      author: Ganbar Dadashzada
+      changes:
+        - insert:
+            tableName: privileges
+            columns:
+              - column:
+                  name: name
+                  value: VIP
+        - insert:
+            tableName: privileges
+            columns:
+              - column:
+                  name: name
+                  value: PREMIUM
