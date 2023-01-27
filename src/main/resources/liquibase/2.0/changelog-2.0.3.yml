@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: Announcement privileges table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: announcement_privilege
+            columns:
+              - column:
+                  name: announcement_entity_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: announcement_privilege_to_announcement
+                    references: announcements(id)
+              - column:
+                  name: privilege_entity_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: announcement_privilege_to_privilege
+                    references: privileges(id)
+              - column:
+                  name: expired_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+

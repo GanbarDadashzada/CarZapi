@@ -1,6 +1,5 @@
 package com.carzapi.digital.model.dto;
 
-import com.carzapi.digital.model.enums.Privilege;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,11 +16,12 @@ public class LightAnnouncementDto {
     private Long id;
     private String modelName;
     private Double price;
+    private String ccy;
     private Integer motorSize;
     private String distanceType;
     private Integer distanceUnit;
     private Integer year;
-    private List<Privilege> privileges;
+    private List<String> privileges;
     private LocalDateTime createdAt;
 
 }
