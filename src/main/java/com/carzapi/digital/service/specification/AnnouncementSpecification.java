@@ -1,8 +1,10 @@
 package com.carzapi.digital.service.specification;
 
 import com.carzapi.digital.dao.entity.AnnouncementEntity;
+import com.carzapi.digital.dao.entity.AnnouncementPrivilegeEntity;
 import com.carzapi.digital.dao.entity.ConditionEntity;
 import com.carzapi.digital.dao.entity.EquipmentEntity;
+import com.carzapi.digital.dao.entity.PrivilegeEntity;
 import com.carzapi.digital.model.dto.AnnouncementCriteria;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +15,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,13 +108,21 @@ public class AnnouncementSpecification implements Specification<AnnouncementEnti
             predicates.add(cb.equal(r.get("seatCount"), criteria.getSeatCount()));
         }
 
-        if (criteria.getPrivileges() != null) {
-            predicates.add(cb.isTrue(cb.function("jsonb_exists_any",
-                    Boolean.class,
-                    r.get("privileges"),
-                    cb.literal(criteria.getPrivileges().stream().map(Enum::name).toArray(String[]::new))))
-            );
+//        if (criteria.getPrivileges() != null) {
+//            predicates.add(cb.isTrue(cb.function("jsonb_exists_any",
+//                    Boolean.class,
+//                    r.get("privileges"),
+//                    cb.literal(criteria.getPrivileges().stream().map(Enum::name).toArray(String[]::new))))
+//            );
+//        }
+
+        if (criteria.getPrivilegeIds() != null) {
+            Join<AnnouncementEntity, AnnouncementPrivilegeEntity> joinA = r.join("announcementPrivilegeEntities");
+            predicates.add(cb.greaterThanOrEqualTo(joinA.get("expiredAt"), cb.currentTimestamp()));
+            Join<AnnouncementPrivilegeEntity, PrivilegeEntity> joinP = joinA.join("privilegeEntity");
+            predicates.add(joinP.get("id").in(criteria.getPrivilegeIds()));
         }
+
 
         if (criteria.getConditionIds() != null) {
             Join<AnnouncementEntity, ConditionEntity> joint = r.join("conditionEntities");
