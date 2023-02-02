@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: Verification table
+      author: Ganbar Dadashzada
+      changes:
+        - createTable:
+            tableName: verifications
+            columns:
+              - column:
+                  name: token
+                  type: varchar
+                  constraints:
+                    nullable: false
