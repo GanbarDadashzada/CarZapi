@@ -13,8 +13,7 @@ import java.util.List;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class AnnouncementDto {
-
+public class AnnouncementRequest {
     private Long id;
     private String distanceType;
     private Integer distanceUnit;
@@ -29,14 +28,13 @@ public class AnnouncementDto {
     private String description;
     private String fullName;
     private String email;
+    private Long modelId;
+    private Long colourId;
+    private Long cityId;
     private GearBox gearBox;
+    private Long banTypeId;
     private Fuel fuel;
     private Integer year;
-    private String model;
-    private String brand;
-    private String colour;
-    private String city;
-    private String banType;
-    private List<String> conditions;
-    private List<String> equipments;
+    private List<Long> conditionIds;
+    private List<Long> equipmentIds;
 }
