@@ -15,7 +15,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,13 +107,6 @@ public class AnnouncementSpecification implements Specification<AnnouncementEnti
             predicates.add(cb.equal(r.get("seatCount"), criteria.getSeatCount()));
         }
 
-//        if (criteria.getPrivileges() != null) {
-//            predicates.add(cb.isTrue(cb.function("jsonb_exists_any",
-//                    Boolean.class,
-//                    r.get("privileges"),
-//                    cb.literal(criteria.getPrivileges().stream().map(Enum::name).toArray(String[]::new))))
-//            );
-//        }
 
         if (criteria.getPrivilegeIds() != null) {
             Join<AnnouncementEntity, AnnouncementPrivilegeEntity> joinA = r.join("announcementPrivilegeEntities");

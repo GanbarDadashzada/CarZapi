@@ -26,6 +26,7 @@ dependencies {
         exclude group: 'org.hibernate', module: 'hibernate-core'
     }
 
+    //liquibase
     implementation 'org.liquibase:liquibase-core:4.17.2'
     runtimeOnly 'org.postgresql:postgresql'
 
@@ -41,7 +42,16 @@ dependencies {
     implementation('org.hibernate:hibernate-core:5.6.14.Final')
     implementation('com.vladmihalcea:hibernate-types-52:2.21.1')
 
+    //mail sender
     implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    // security
+    implementation('org.springframework.boot:spring-boot-starter-security')
+
+    //jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 

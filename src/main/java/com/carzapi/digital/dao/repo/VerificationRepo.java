@@ -4,5 +4,8 @@ import com.carzapi.digital.dao.entity.VerificationEntity;
 import com.carzapi.digital.dao.entity.embedded.VerificationKey;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface VerificationRepo extends JpaRepository<VerificationEntity, VerificationKey> {
+import java.util.Optional;
+
+public interface VerificationRepo extends JpaRepository<VerificationEntity, Long> {
+    Optional<VerificationEntity> findByIdAndToken (VerificationKey verificationKey, String token);
 }

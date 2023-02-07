@@ -58,9 +58,6 @@ public class AnnouncementEntity {
     private String description;
     private String fullName;
     private String email;
-//    @Type(type = "jsonb")
-//    @Column(columnDefinition = "jsonb")
-//    private List<Privilege> privileges;
 
     @OneToMany(mappedBy = "announcementEntity")
     private List<AnnouncementPrivilegeEntity> announcementPrivilegeEntities;

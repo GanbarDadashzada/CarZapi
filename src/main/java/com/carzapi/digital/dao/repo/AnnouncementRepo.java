@@ -11,4 +11,6 @@ public interface AnnouncementRepo extends JpaRepository<AnnouncementEntity, Long
         JpaSpecificationExecutor<AnnouncementEntity> {
     @Query("select email from AnnouncementEntity where email = :email")
     String findByEmail (String email);
+
+    List<AnnouncementEntity> findAllByEmail (String email);
 }
