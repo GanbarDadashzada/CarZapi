@@ -1,6 +1,5 @@
 package com.carzapi.digital.controller;
 
-import com.carzapi.digital.dao.entity.PrivilegeEntity;
 import com.carzapi.digital.model.dto.DictionaryDto;
 import com.carzapi.digital.service.DictionaryService;
 import lombok.RequiredArgsConstructor;
