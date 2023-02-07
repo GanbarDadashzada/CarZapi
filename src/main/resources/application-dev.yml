@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/carzapidb
+    url: jdbc:postgresql://localhost:5432/turbo-az-copy
     username: postgres
     password: salam123
   jpa:
