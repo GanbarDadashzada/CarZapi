@@ -28,13 +28,11 @@ import com.carzapi.digital.service.specification.AnnouncementSpecification;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.mapstruct.Mapping;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
