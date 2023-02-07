@@ -22,4 +22,5 @@ public class VerificationEntity {
     @EmbeddedId
     private VerificationKey id;
     private String token;
+
 }
